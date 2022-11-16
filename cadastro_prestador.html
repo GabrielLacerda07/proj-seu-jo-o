@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Negócio do seu João</title>
+  <link rel="stylesheet" href="css/cadastro_prestador.css">
+  <script src="https://kit.fontawesome.com/5c7597c188.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <nav>Home
+    <i class="fa-solid fa-briefcase"></i>
+  </nav>
+  <div id="cadastro-prestador">
+    <h1>Cadastro de prestador de serviços</h1>
+    <form action="">
+      <div id="envio-dados">
+        <div class="inputs-basico">
+          <label for="nome">Nome:</label>
+          <input type="text" name="nome">
+
+          <label for="email">Email:</label>
+          <input type="text" name="email">
+
+          <label for="telefone">Telefone:</label>
+          <input type="tel" name="telefone">
+        </div>
+        <div class="img-serv">
+
+          <label id="adc-img" for="arquivo-img">Escolha uma imagem <i class="fa-solid fa-image"></i></label>
+          <input type="file" accept="image/*" name="arquivo-img" id="arquivo-img">
+
+          <label for="servicos_prestados">Serviços prestados:</label>
+          <textarea name="servicos_prestados" rows="5"></textarea>
+        </div>
+      </div>
+      <button type="submit">Enviar</button>
+
+    </form>
+
+  </div>
+</body>
+
+</html>

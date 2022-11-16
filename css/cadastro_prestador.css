@@ -1,0 +1,107 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+body{
+  font-family: Arial, Helvetica, sans-serif;
+}
+nav{
+  display: flex;
+  align-items: center;
+  padding: 15px 60px;
+  margin: 0 0 80px 0;
+  font-size: 20px;
+  background-color: rgb(50, 50, 75);
+  color: #fff;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+nav i{
+padding: 0 7px;
+}
+#cadastro-prestador{
+  margin: 0 auto;
+  width: 60%;
+  text-align: center;
+  border: 2px solid  rgb(191, 191, 240);
+  border-radius: 10px;
+}
+#cadastro-prestador h1{
+  background-color: rgb(191, 191, 240);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5;
+  padding:  7px 0;
+}
+#envio-dados{
+  display: flex;
+  flex-direction: row;
+}
+.inputs-basico{
+  display: flex;
+  flex-direction: column;
+  width: 55%;
+  align-items: center;
+  padding-bottom: 20px;
+}
+.inputs-basico label, .inputs-basico input{
+  text-align: left;
+  width: 80%;
+}
+.inputs-basico label{
+  margin: 10px 0;
+  font-size: 18px;
+
+}
+.inputs-basico input{
+  padding: 8px 0;
+  border-radius: 5px;
+  border: 1px solid rgb(50, 50, 75);
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+.img-serv{
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  align-items: center;
+  padding-bottom: 20px;
+}
+.img-serv input[type="file"]{
+  display: none;
+}
+.img-serv #adc-img{
+  padding: 40px 5px;
+  width: 60%;
+  font-size: 18px;
+  background-color: rgb(240, 240, 240);
+  border-radius: 10px;
+  color: black;
+  letter-spacing: 0.7px;
+  display: block;
+  margin: 20px 0;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  cursor: pointer;
+}
+.img-serv label{
+  font-size: 18px;
+}
+.img-serv textarea{
+  width: 50%;
+  min-width: 20px;
+  border-radius: 5px;
+}
+form button{
+  width: 40%;
+  padding: 20px 10px;
+  font-size: 20px;
+  background-color:  rgb(191, 191, 240);
+  border: transparent;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+form button:hover{
+  background-color:  rgb(50, 50, 75);
+  color: #fff;
+}
