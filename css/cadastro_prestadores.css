@@ -63,27 +63,26 @@ padding: 0 7px;
   flex-direction: column;
   width: 45%;
   align-items: center;
+  justify-content: center;
   padding-bottom: 20px;
-}
-.img-serv input[type="file"]{
-  display: none;
-}
-.img-serv #adc-img{
-  padding: 40px 5px;
-  width: 60%;
-  font-size: 18px;
-  background-color: rgb(240, 240, 240);
-  border-radius: 10px;
-  color: black;
-  letter-spacing: 0.7px;
-  display: block;
-  margin: 20px 0;
-  font-family: Arial, Helvetica, sans-serif;
-  text-align: center;
-  cursor: pointer;
 }
 .img-serv label{
   font-size: 18px;
+}
+.img-container{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+input[type='file']{
+  display: none;
+}
+#imgPhoto{
+  margin-top: 10%;
+  width: 160px;
+  padding: 10%;
+  cursor: pointer;  
 }
 .img-serv textarea{
   width: 50%;

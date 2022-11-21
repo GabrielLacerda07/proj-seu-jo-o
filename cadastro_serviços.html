@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Negócio do seu João</title>
-  <link rel="stylesheet" href="css/cadastro_prestadores.css">
+  <link rel="stylesheet" href="css/cadastro_servicos.css">
   <script src="https://kit.fontawesome.com/5c7597c188.js" crossorigin="anonymous"></script>
 </head>
 
@@ -14,11 +14,18 @@
   <nav>Home
     <i class="fa-solid fa-briefcase"></i>
   </nav>
-  <div id="cadastro-prestador">
-    <h1>Cadastro de prestador de serviços</h1>
+  <div id="cadastro-servicos">
+    <h1>Cadastro de serviços</h1>
     <form action="">
       <div id="envio-dados">
         <div class="inputs-basico">
+          <label for="prestador">Prestador:</label>
+          <select name="" id="">
+            <option value="">teste 01</option>
+            <option value="">teste 02</option>
+            <option value="">teste 03</option>
+          </select>
+
           <label for="nome">Nome:</label>
           <input type="text" name="nome">
 
@@ -28,18 +35,11 @@
           <label for="telefone">Telefone:</label>
           <input type="tel" name="telefone">
         </div>
-        <div class="img-serv">
-          <div class="imageContainer">
-            <img src="img/img.png" alt="" id="imgPhoto">
-            <input type="file" id="flImage" name="fImage" accept="image/*">
-          </div>
-          <label for="servicos_prestados">Serviços prestados:</label>
-          <textarea name="servicos_prestados" rows="5"></textarea>
-        </div>
       </div>
       <button type="submit">Enviar</button>
 
     </form>
+  </div>
 
   </div>
 
