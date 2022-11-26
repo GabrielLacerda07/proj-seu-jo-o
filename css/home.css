@@ -12,6 +12,8 @@ nav{
   margin: 0 0 80px 0;
   font-size: 20px;
   background-color: rgb(50, 50, 75);
+  justify-content: center;
+  font-size: 25px;
   color: #fff;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
