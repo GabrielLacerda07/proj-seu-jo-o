@@ -4,6 +4,7 @@
 }
 body{
   font-family: Arial, Helvetica, sans-serif;
+  height: 100vh;
 }
 nav{
 display: flex;
@@ -22,8 +23,9 @@ padding: 0 7px;
 #form-box{
   border: 1px solid  rgb(145, 145, 145);
   border-radius: 10px;
-  display: flex;
-  justify-content: center;
+position: relative;
+top: 50%;
+transform: translateY(-100%); 
   letter-spacing: 0.4px;
   width: 290px;
   margin: 0 auto;
@@ -62,13 +64,15 @@ form .div-form{
   font-size: 18px;
   padding: 5px;
 }
-#form-box button{
+#form-box  #send{
   background-color:  rgb(191, 191, 240);
   border: transparent;
-  padding: 12px 5px;
-  border-radius: 5px;
-  width: 88%;
-  font-size: 18px;
+  margin-top: 20px;
+  padding: 15px 5px;
+  border-radius: 7px;
+  width: 90%;
+  height: 100%;
+  font-size: 22px;
   letter-spacing: 0.6px;
   cursor: pointer;
 }
