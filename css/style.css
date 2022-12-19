@@ -45,6 +45,7 @@ transform: translateY(-100%);
   text-align: center;
   padding: 15px 0;
   font-size: 20px;
+  margin-bottom: 20px
 }
 form .div-form{
   display: flex;
@@ -60,14 +61,14 @@ form .div-form{
   height: 30px;
   border-radius: 2px;
   border: 1px solid rgb(207, 207, 207) ;
-  margin-bottom: 25px;
+  margin-bottom: 5px;
   font-size: 18px;
   padding: 5px;
 }
 #form-box  #send{
   background-color:  rgb(191, 191, 240);
   border: transparent;
-  margin-top: 20px;
+  margin-top: 50px;
   padding: 15px 5px;
   border-radius: 7px;
   width: 90%;
@@ -76,5 +77,21 @@ form .div-form{
   letter-spacing: 0.6px;
   cursor: pointer;
 }
-
-
+#form-box small{
+  visibility: hidden;
+  font-size: 15px;
+}
+#form-box small.error{
+  color: #e74c5c;
+  visibility: visible;
+}
+#form-box small.success{
+  color: #2ecc71;
+  visibility: visible;
+}
+#form-box .border-error{
+  border-color: #e74c5c;
+}
+#form-box .border-success{
+  border-color: #2ecc71;
+}
