@@ -20,13 +20,13 @@
       <div class="envio-dados">
         <div class="inputs-basico">
           <label for="nome">Nome:</label>
-          <input required type="text" name="nome" placeholder="Nome do prestador de serviço">
+          <input id="nome" required type="text" name="nome" placeholder="Nome do prestador de serviço">
 
           <label for="email">Email:</label>
-          <input required type="text" name="email" placeholder="Email do prestador de serviço">
+          <input id="email" required type="text" name="email" placeholder="Email do prestador de serviço">
 
           <label for="telefone">Telefone:</label>
-          <input required type="tel" name="telefone" placeholder="Telefone do prestador de serviço">
+          <input id="fone" required type="tel" name="telefone" placeholder="Telefone do prestador de serviço">
         </div>
         <div class="img-serv">
           <div class="imageContainer">
@@ -40,9 +40,9 @@
         <div id="servicos">
           <div class="inputs-servicos">
             <label for="">Nome do serviço:</label>
-            <input required type="text" placeholder="Serviço prestado pelo prestador">
+            <input type="text" placeholder="Serviço prestado pelo prestador">
             <label for="">Valor do serviço:</label>
-            <input required type="text" placeholder="Informe o valor">
+            <input type="text" placeholder="Informe o valor">
           </div>
           <div class="textarea-servicos">
             <label for="servicos_prestados">Serviços prestados:</label>
@@ -52,13 +52,13 @@
         </div>
       </div>
 
-      <button type="submit">Enviar</button>
+      <button id="send" type="submit">Enviar</button>
 
     </form>
 
   </div>
   <a id="btn-back-to-home" href="home.html"><i class="fa-solid fa-arrow-left"></i></a>
-  <script src="js/cadastro_prestador.js"></script>
+  <script src="js/cadastro_prestadores.js"></script>
 </body>
 
 </html>
