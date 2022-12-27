@@ -3,70 +3,46 @@ btnSubmit.addEventListener('click', (event) => {
   event.preventDefault()
   const userInput = document.querySelector('#user')
   const passwordInput = document.querySelector('#password')
-  console.log(validatePasswordDb(passwordInput))
-  if (validateUserDb(userInput).value == 1 && validatePasswordDb(passwordInput) == 2) {
-    console.log('Passou')
-  }
+  checkUserAndPassword(userInput, passwordInput)
 })
 
 
-function checkUser(userInput) {
-  if (userInput.value === "") {
-    setErrorFor(userInput, 'O usuário é obrigatório!');
-  } else if (!checkEmail(userInput.value)) {
-    setErrorFor(userInput, 'Insira um email válido');
-  } else if (validateUserDb(userInput)) {
-    setErrorFor(userInput, 'Usuário não cadastrado');
+async function checkUserAndPassword(userInput, passwordInput) {
+
+  const usersDb = await getUsersDb()
+  const userDbJoao = usersDb.users[0].User.email
+  const passwordDbJoao = usersDb.users[0].User.senha
+  const userDbGabriel = usersDb.users[1].User.email
+  const passwordDbGabriel = usersDb.users[1].User.senha
+  if (userInput.value === userDbJoao && passwordInput.value === passwordDbJoao) {
+    console.log('ok')
+    setSuccessFor(userInput, passwordInput)
+  } else if (userInput.value === userDbGabriel && passwordInput.value === passwordDbGabriel) {
+    console.log('ok')
+    setSuccessFor(userInput, passwordInput)
   } else {
-    setSuccessFor(userInput)
+    setErrorFor(userInput, passwordInput, "Informações inválidas")
   }
 }
-function checkPassword(passwordInput) {
-  if (passwordInput.value === "") {
-    setErrorFor(passwordInput, 'A senha é obrigatória')
-  } else if (validatePasswordDb(passwordInput)) {
-    setErrorFor(passwordInput, 'Insira a senha correta')
-  } else {
-    setSuccessFor(userInput)
-  }
-}
-function setErrorFor(input, message) {
-  const divForm = input.parentElement
-  const small = divForm.querySelector("small")
-  input.className = 'border-error'
+
+function setErrorFor(input1, input2, message) {
+  const divForm = input1.parentElement
+  const divForm2 = input2.parentElement
+  const small = divForm2.querySelector("small")
+  input2.className = 'border-error'
+  input1.className = 'border-error'
   small.innerText = message
   small.className = 'error'
 }
-function setSuccessFor(input) {
-  const divForm = input.parentElement
-  const small = divForm.querySelector("small")
-  input.className = 'border-success'
+function setSuccessFor(input1, input2) {
+  const divForm = input1.parentElement
+  const divForm2 = input2.parentElement
+  const small = divForm2.querySelector("small")
+  input1.className = 'border-success'
+  input2.className = 'border-success'
   small.className = 'success'
   small.innerText = ''
-}
-function checkEmail(email) {
-  return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
-    email
-  );
-}
-//
-async function validateUserDb(userInput) {
-  const usersDb = await getUsersDb()
-  const userDb = usersDb.users[0].User.email
-  if (userInput.value === userDb) {
-    setSuccessFor(userInput)
-    const resultValide = 1
-    return resultValide
-  }
-}
-async function validatePasswordDb(passwordInput) {
-  const usersDb = await getUsersDb()
-  const userDb = usersDb.users[0].User.senha
-  if (passwordInput.value === userDb) {
-    setSuccessFor(passwordInput)
-    const resultValide = 2
-    return resultValide
-  }
+  window.location.href = "home.html"
 }
 async function getUsersDb() {
   const response = await fetch(`http://localhost/seuJoaoApi/users.json`)
