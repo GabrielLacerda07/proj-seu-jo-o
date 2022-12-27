@@ -29,7 +29,13 @@ async function createTbody() {
       td_email.innerText = provider.Provider.email
       td_telefone.innerText = provider.Provider.telefone
       td_service.innerText = provider.Service.nome
-      td_detalhes.innerText = 'detalhes'
+      let a = document.createElement('a')
+      let link = `detalhes.html?id=${provider.Provider.id}`
+      a.setAttribute('href', link)
+      a.setAttribute('id', provider.Provider.id)
+      a.innerText = 'Detalhes'
+      a.style.color = 'black'
+      td_detalhes.appendChild(a)
     },
     update() {
       html.get('tbody').innerText = " "
@@ -100,21 +106,21 @@ async function createTbody() {
   }
 
 
-  const tableRows = document.querySelectorAll('tr')
-  const exportBtn = document.querySelector('#exportBtn')
+  // const tableRows = document.querySelectorAll('tr')
+  // const exportBtn = document.querySelector('#exportBtn')
 
-  exportBtn.addEventListener('click', () => {
+  // exportBtn.addEventListener('click', () => {
 
-    const CSVString = Array.from(tableRows)
-      .map(row => Array.from(row.cells)
-        .map(cell => cell.textContent)
-        .join(', ')
-      )
-      .join('\n')
-    exportBtn.setAttribute(
-      'href',
-      `data:text/csv;charset=utf-8,${encodeURIComponent(CSVString)}`
-    )
-    exportBtn.setAttribute('dowload', 'table.csv')
-  })
+  //   const CSVString = Array.from(tableRows)
+  //     .map(row => Array.from(row.cells)
+  //       .map(cell => cell.textContent)
+  //       .join(', ')
+  //     )
+  //     .join('\n')
+  //   exportBtn.setAttribute(
+  //     'href',
+  //     `data:text/csv;charset=utf-8,${encodeURIComponent(CSVString)}`
+  //   )
+  //   exportBtn.setAttribute('dowload', 'table.csv')
+  // })
 }

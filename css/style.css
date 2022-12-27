@@ -23,9 +23,9 @@ padding: 0 7px;
 #form-box{
   border: 1px solid  rgb(145, 145, 145);
   border-radius: 10px;
-position: relative;
-top: 50%;
-transform: translateY(-100%); 
+  position: relative;
+  top: 50%;
+transform: translateY(-75%); 
   letter-spacing: 0.4px;
   width: 290px;
   margin: 0 auto;
