@@ -25,7 +25,7 @@ function checkPassword(passwordInput) {
   if (passwordInput.value === "") {
     setErrorFor(passwordInput, 'A senha é obrigatória')
   } else if (validatePasswordDb(passwordInput)) {
-    setErrorFor(passwordInput, 'Insira a senha correta')
+    setErrorFor(passwordInput, 'Insira a senha corretamente')
   } else {
     setSuccessFor(userInput)
   }
