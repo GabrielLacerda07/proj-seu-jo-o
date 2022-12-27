@@ -9,7 +9,6 @@ async function getProvidersDb() {
 async function createTbody() {
   const tbody = document.querySelector('.tbody')
   let dataProviders = await getProvidersDb()
-
   const html = {
     get(element) {
       return document.querySelector(element)
@@ -17,8 +16,6 @@ async function createTbody() {
   }
   const list = {
     create(provider) {
-
-      console.log(provider.Provider)
       let tr = tbody.insertRow()
       let td_id = tr.insertCell()
       let td_name = tr.insertCell()
@@ -33,26 +30,6 @@ async function createTbody() {
       td_telefone.innerText = provider.Provider.telefone
       td_service.innerText = provider.Service.nome
       td_detalhes.innerText = 'detalhes'
-
-
-      // for (let i = 0; i < dataProviders.length; i++) {
-
-      //   let tr = tbody.insertRow()
-      //   let td_id = tr.insertCell()
-      //   let td_name = tr.insertCell()
-      //   let td_email = tr.insertCell()
-      //   let td_telefone = tr.insertCell()
-      //   let td_service = tr.insertCell()
-      //   let td_detalhes = tr.insertCell()
-
-      //   td_id.innerText = dataProviders[i].Provider.id
-      //   td_name.innerText = dataProviders[i].Provider.nome
-      //   td_email.innerText = dataProviders[i].Provider.email
-      //   td_telefone.innerText = dataProviders[i].Provider.telefone
-      //   td_service.innerText = dataProviders[i].Service.nome
-      //   td_detalhes.innerText = 'detalhes'
-      // }
-
     },
     update() {
       html.get('tbody').innerText = " "
@@ -114,7 +91,6 @@ async function createTbody() {
     }
   }
   init()
-
   function update() {
     list.update()
   }
@@ -124,4 +100,21 @@ async function createTbody() {
   }
 
 
+  const tableRows = document.querySelectorAll('tr')
+  const exportBtn = document.querySelector('#exportBtn')
+
+  exportBtn.addEventListener('click', () => {
+
+    const CSVString = Array.from(tableRows)
+      .map(row => Array.from(row.cells)
+        .map(cell => cell.textContent)
+        .join(', ')
+      )
+      .join('\n')
+    exportBtn.setAttribute(
+      'href',
+      `data:text/csv;charset=utf-8,${encodeURIComponent(CSVString)}`
+    )
+    exportBtn.setAttribute('dowload', 'table.csv')
+  })
 }

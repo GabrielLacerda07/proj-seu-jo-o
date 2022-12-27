@@ -17,6 +17,10 @@ nav{
 nav i{
 padding: 0 7px;
 }
+.divBtn{
+  display: flex;
+  justify-content: end;
+}
 .numbers{
   font-size: 15px;
 }
