@@ -30,10 +30,13 @@ async function setProviderDb() {
   const bodyJson = {
     "Provider": {
       "nome": "Testando nome 01",
-      "email": "Testando email 01"
+      "email": "Testando email 01",
+      "telefone": "Testando fone 01",
+      "service_value": "Testando valor do servico 90.50",
+      "service_desc": "Testando descricao 01"
     },
     "Service": {
-      "nome": "Carpintaria"
+      "nome": "Dev mobile"
     }
   }
   const response = await fetch('http://localhost/seuJoaoApi/providers/add', {
