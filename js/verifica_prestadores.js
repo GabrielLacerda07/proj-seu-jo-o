@@ -6,11 +6,10 @@ async function getProvidersDb() {
   return data.prestadores
 }
 async function deteleUser(id) {
-  console.log(id)
-  const response = await fetch(`http://localhost/seuJoaoApi/providers/delete/${id}`, {
+  const response = await fetch(`http://localhost/seuJoaoApi/providers/delete/${id}/`, {
     method: 'DELETE'
   })
-  console.log(response)
+  console.log('Deletou')
 }
 
 async function createTbody() {
@@ -69,7 +68,7 @@ async function createTbody() {
     }
   }
 
-  let perPage = 5
+  let perPage = 4
   const state = {
     page: 1,
     perPage,
