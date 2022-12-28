@@ -5,6 +5,13 @@ async function getProvidersDb() {
   const data = await response.json()
   return data.prestadores
 }
+async function deteleUser(id) {
+  console.log(id)
+  const response = await fetch(`http://localhost/seuJoaoApi/providers/delete/${id}`, {
+    method: 'DELETE'
+  })
+  console.log(response)
+}
 
 async function createTbody() {
   const tbody = document.querySelector('.tbody')
@@ -23,12 +30,25 @@ async function createTbody() {
       let td_telefone = tr.insertCell()
       let td_service = tr.insertCell()
       let td_detalhes = tr.insertCell()
+      let td_delete = tr.insertCell()
 
       td_id.innerText = provider.Provider.id
       td_name.innerText = provider.Provider.nome
       td_email.innerText = provider.Provider.email
       td_telefone.innerText = provider.Provider.telefone
       td_service.innerText = provider.Service.nome
+      let btnDelete = document.createElement('button')
+      btnDelete.setAttribute('id', provider.Provider.id)
+      btnDelete.setAttribute('class', 'btn btn-danger text-light')
+      let iconLixeira = document.createElement('i')
+      iconLixeira.setAttribute('class', 'fa-solid fa-trash')
+      btnDelete.appendChild(iconLixeira)
+      td_delete.appendChild(btnDelete)
+
+      btnDelete.addEventListener('click', () => {
+        deteleUser(provider.Provider.id)
+      })
+
       let a = document.createElement('a')
       let link = `detalhes.html?id=${provider.Provider.id}`
       a.setAttribute('href', link)
@@ -36,6 +56,8 @@ async function createTbody() {
       a.innerText = 'Detalhes'
       a.style.color = 'black'
       td_detalhes.appendChild(a)
+
+
     },
     update() {
       html.get('tbody').innerText = " "
