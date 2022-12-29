@@ -40,27 +40,23 @@ async function getServicesDb() {
   })
 }
 async function setProviderDb() {
-  console.log('teste')
-  const response = await fetch('http://localhost/seuJoaoApi/services.json')
-  console.log(response.json())
-  // const bodyJson = {
-  //   "Provider": {
-  //     "nome": "Testando nome 01",
-  //     "email": "Testando email 01",
-  //     "telefone": "Testando fone 01",
-  //     "service_value": "Testando valor do servico 90.50",
-  //     "service_desc": "Testando descricao 01"
-  //   },
-  //   "Service": {
-  //     "nome": "Dev mobile"
-  //   }
-  // }
-  // const response = await fetch('http://localhost/seuJoaoApi/providers/', {
-  //   method: 'POST',
-  //   body: JSON.stringify(bodyJson)
-  // })
-  // const jsonData = await response.json()
-  // console.log(jsonData)
+  const bodyJson = {
+    "Provider": {
+      "nome": "Testando nome 01",
+      "email": "Testando email 01",
+      "telefone": "Testando fone 01",
+      "service_value": "Testando valor do servico 90.50",
+      "service_desc": "Testando descricao 01"
+    },
+    "Service": {
+      "nome": "Dev mobile"
+    }
+  }
+  const response = await fetch('http://localhost/seuJoaoApi/providers', {
+    method: 'POST',
+    body: JSON.stringify(bodyJson)
+  })
+  const jsonData = await response.json()
+  console.log(jsonData)
 
-  // console.log(jsonData.prestadores[2].Provider.nome)
 }
