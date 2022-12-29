@@ -50,7 +50,7 @@ padding: 0 7px;
   align-items: center;
   padding-bottom: 20px;
 }
-.inputs-basico label, .inputs-basico input{
+.inputs-basico label, .inputs-basico input, select{
   text-align: left;
   width: 80%;
 }
@@ -59,7 +59,7 @@ padding: 0 7px;
   font-size: 18px;
 
 }
-.inputs-basico input{
+.inputs-basico input, select{
   padding: 8px;
   border-radius: 5px;
   border: 1px solid rgb(50, 50, 75);
