@@ -1,4 +1,4 @@
-
+getServicesDb()
 let photo = document.getElementById('imgPhoto')
 // let file = document.getElementById('flImage')
 let imgPrestador = document.querySelector('#flImage')
@@ -25,23 +25,38 @@ btnSubmit.addEventListener('click', (event) => {
   setProviderDb()
 })
 
-async function setProviderDb() {
+async function getServicesDb() {
+  const response = await fetch('http://localhost/seuJoaoApi/services.json')
+  const responseJson = await response.json()
+  const servicos = await responseJson.servicos
+  const selectHtml = document.querySelector('select')
 
+  servicos.forEach(servico => {
+
+    let option = document.createElement('option')
+    option.innerText = servico.Service.nome
+    option.setAttribute('value', servico.Service.nome)
+    selectHtml.appendChild(option)
+  })
+}
+async function setProviderDb() {
   const bodyJson = {
     "Provider": {
       "nome": "Testando nome 01",
-      "email": "Testando email 01"
+      "email": "Testando email 01",
+      "telefone": "Testando fone 01",
+      "service_value": "Testando valor do servico 90.50",
+      "service_desc": "Testando descricao 01"
     },
     "Service": {
-      "nome": "Carpintaria"
+      "nome": "Dev mobile"
     }
   }
-  const response = await fetch('http://localhost/seuJoaoApi/providers/add', {
+  const response = await fetch('http://localhost/seuJoaoApi/providers', {
     method: 'POST',
     body: JSON.stringify(bodyJson)
   })
   const jsonData = await response.json()
   console.log(jsonData)
 
-  // console.log(jsonData.prestadores[2].Provider.nome)
 }
