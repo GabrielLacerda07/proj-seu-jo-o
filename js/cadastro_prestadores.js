@@ -49,10 +49,10 @@ async function setProviderDb() {
       "service_desc": "Testando descricao 01"
     },
     "Service": {
-      "nome": "Dev mobile"
+      "nome": "Desenvolvedor web"
     }
   }
-  const response = await fetch('http://localhost/seuJoaoApi/providers', {
+  const response = await fetch('http://localhost/seuJoaoApi/providers/add/', {
     method: 'POST',
     body: JSON.stringify(bodyJson)
   })
