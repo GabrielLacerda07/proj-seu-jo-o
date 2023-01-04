@@ -6,10 +6,8 @@ async function getProvidersDb() {
   return data.prestadores
 }
 async function deteleUser(id) {
-  const response = await fetch(`http://localhost/seuJoaoApi/providers/delete/${id}/`, {
-    method: 'DELETE'
-  })
-  console.log('Deletou')
+  const response = await fetch(`http://localhost/seuJoaoApi/providers/delete/${id}`)
+  window.location.reload()
 }
 
 async function createTbody() {
