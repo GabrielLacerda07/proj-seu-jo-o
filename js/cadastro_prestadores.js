@@ -58,5 +58,4 @@ async function setProviderDb() {
   })
   const jsonData = await response.json()
   console.log(jsonData)
-
 }
