@@ -9,10 +9,12 @@ btnSubmit.addEventListener('click', (event) => {
 async function setServicoDb(nomeServico) {
   const response = await fetch('http://localhost/seuJoaoApi/services/add', {
     method: 'POST',
+    headers: {
+      "Content-Type": "application/json",
+    },
     body: {
       nome: JSON.stringify(nomeServico)
     }
   })
   console.log(response)
-
 }
