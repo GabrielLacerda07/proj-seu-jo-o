@@ -50,14 +50,24 @@ padding: 0 7px;
   align-items: center;
   padding-bottom: 20px;
 }
-.inputs-basico label, .inputs-basico input, select{
+.inputs-basico label, .inputs-basico input, select, span{
   text-align: left;
   width: 80%;
+}
+.inputs-basico span{
+  font-size: 13px;
+}
+span a{
+  text-decoration: none;
+  color: black;
+}
+span a:hover{
+  color: rgb(56, 19, 119);
+  cursor: pointer;
 }
 .inputs-basico label{
   margin: 10px 0;
   font-size: 18px;
-
 }
 .inputs-basico input, select{
   padding: 8px;
