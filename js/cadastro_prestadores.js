@@ -26,7 +26,7 @@ btnSubmit.addEventListener('click', (event) => {
   const telefoneInput = document.querySelector('#fone').value
   const imgInput = document.querySelector('#flImage').value
   const selectIntput = document.querySelector('select')
-  const optionInput = selectIntput.options[selectIntput.selectedIndex].value
+  const optionInput = selectIntput.options[selectIntput.selectedIndex].id
   const valorInput = document.querySelector('#valor').value
   const servicoDesc = document.querySelector('#servicoDesc').value
   setProviderDb(
@@ -51,23 +51,20 @@ async function getServicesDb() {
     let option = document.createElement('option')
     option.innerText = servico.Service.nome
     option.setAttribute('value', servico.Service.nome)
-    option.setAttribute('id', servico.Service.nome)
+    option.setAttribute('value', servico.Service.id)
     selectHtml.appendChild(option)
   })
 }
 async function setProviderDb(nome, email, fone, img, servico, valor, desc) {
-
   const bodyJson = {
     "Provider": {
       "nome": nome,
       "email": email,
       "telefone": fone,
       "foto": img,
+      "service_id": servico,
       "service_value": valor,
       "service_desc": desc
-    },
-    "Service": {
-      "nome": servico
     }
   }
   const response = await fetch('http://localhost/seuJoaoApi/providers/add/', {
