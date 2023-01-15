@@ -38,6 +38,12 @@ btnSubmit.addEventListener('click', (event) => {
     valorInput,
     servicoDesc
   )
+  document.querySelector('#nome').value = ''
+  document.querySelector('#email').value = ''
+  document.querySelector('#fone').value = ''
+  document.querySelector('#flImage').value = ''
+  document.querySelector('#valor').value = ''
+  document.querySelector('#servicoDesc').value = ''
 })
 
 async function getServicesDb() {
