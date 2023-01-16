@@ -26,7 +26,7 @@ btnSubmit.addEventListener('click', (event) => {
   const telefoneInput = document.querySelector('#fone').value
   const imgInput = document.querySelector('#flImage').value
   const selectIntput = document.querySelector('select')
-  const optionInput = selectIntput.options[selectIntput.selectedIndex].id
+  const optionInput = selectIntput.options[selectIntput.selectedIndex].value
   const valorInput = document.querySelector('#valor').value
   const servicoDesc = document.querySelector('#servicoDesc').value
   setProviderDb(
