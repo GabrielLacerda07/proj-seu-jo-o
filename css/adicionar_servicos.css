@@ -60,6 +60,7 @@ padding: 0 7px;
 }
 form button{
   width: 20%;
+  min-width: 90px;
   padding: 10px 5px;
   font-size: 20px;
   background-color:  rgb(191, 191, 240);

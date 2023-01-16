@@ -4,6 +4,7 @@ btnSubmit.addEventListener('click', (event) => {
   event.preventDefault()
   const nomeServico = document.querySelector('#nome').value
   setServicoDb(nomeServico)
+  document.querySelector('#nome').value = ''
 })
 
 async function setServicoDb(nomeServico) {
@@ -14,10 +15,23 @@ async function setServicoDb(nomeServico) {
   }
   const response = await fetch('http://localhost/seuJoaoApi/services/add', {
     method: 'POST',
-    body: {
-      nome: JSON.stringify(bodyJson)
-    }
+    body: JSON.stringify(bodyJson)
   })
   const jsonData = await response.json()
-  console.log(response)
+  console.log(jsonData)
+  if (jsonData == 201) {
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'Serviço cadastrado com sucesso!',
+      showConfirmButton: false,
+      timer: 2000
+    })
+  } else {
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'Não foi possível realizar o cadastro!'
+    })
+  }
 }
