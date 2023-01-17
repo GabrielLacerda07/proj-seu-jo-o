@@ -88,7 +88,7 @@ async function setProviderDb(nome, email, fone, img, servico, valor, desc) {
   const jsonData = await response.json()
   if (jsonData == 201) {
     Swal.fire({
-      position: 'top-end',
+      position: 'center',
       icon: 'success',
       title: 'Prestador cadastrado com sucesso!',
       showConfirmButton: false,
