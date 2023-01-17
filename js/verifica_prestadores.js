@@ -66,7 +66,7 @@ async function createTbody() {
     }
   }
 
-  let perPage = 4
+  let perPage = 10
   const state = {
     page: 1,
     perPage,
