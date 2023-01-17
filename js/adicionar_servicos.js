@@ -21,7 +21,7 @@ async function setServicoDb(nomeServico) {
   console.log(jsonData)
   if (jsonData == 201) {
     Swal.fire({
-      position: 'top-end',
+      position: 'center',
       icon: 'success',
       title: 'Serviço cadastrado com sucesso!',
       showConfirmButton: false,
