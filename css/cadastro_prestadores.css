@@ -147,6 +147,16 @@ input[type='file']{
   text-align: left;
   width: 80%;
 }
+#erroMsg{
+  max-width: 300px;
+  padding: 7px 3px;
+  border-radius: 6px;
+  margin: 0 auto 15px;
+}
+.error{
+  background-color: rgb(255, 35, 35);
+  color: #fff;
+}
 form button{
   width: 40%;
   padding: 20px 10px;
@@ -161,24 +171,4 @@ form button{
 form button:hover{
   background-color:  rgb(50, 50, 75);
   color: #fff;
-}
-#btn-back-to-home{
-  position: absolute;
-  background-color:  rgb(50, 50, 75);
-  color: #fff;
-  padding: 15px;
-  border: 1px solid  rgb(50, 50, 75);
-  width: 25px;
-  height: 25px;
-  font-size: 25px;
-  text-align: center;
-  border-radius: 100%;
-  top: 90vh;
-  left: 5vw;
-  transition: .7s;
-}
-#btn-back-to-home:hover{
-  background-color:   rgb(191, 191, 240);
-  border:   rgb(191, 191, 240);
-  transform: scale(1.1);
 }

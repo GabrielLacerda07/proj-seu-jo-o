@@ -29,21 +29,29 @@ btnSubmit.addEventListener('click', (event) => {
   const optionInput = selectIntput.options[selectIntput.selectedIndex].value
   const valorInput = document.querySelector('#valor').value
   const servicoDesc = document.querySelector('#servicoDesc').value
-  setProviderDb(
-    nomeInput,
-    emailInput,
-    telefoneInput,
-    imgInput,
-    optionInput,
-    valorInput,
-    servicoDesc
-  )
-  document.querySelector('#nome').value = ''
-  document.querySelector('#email').value = ''
-  document.querySelector('#fone').value = ''
-  document.querySelector('#flImage').value = ''
-  document.querySelector('#valor').value = ''
-  document.querySelector('#servicoDesc').value = ''
+  if (nomeInput == '' || emailInput == '' || nomeInput == '' || telefoneInput == '' || selectIntput == '' || optionInput == '' || valorInput == '' || servicoDesc == '') {
+    const erroMsg = document.querySelector('#erroMsg')
+    erroMsg.innerText = 'Preencha todos os campos necessários!'
+    erroMsg.classList = 'error'
+  } else {
+    erroMsg.innerText = ''
+    erroMsg.classList.remove('error')
+    setProviderDb(
+      nomeInput,
+      emailInput,
+      telefoneInput,
+      imgInput,
+      optionInput,
+      valorInput,
+      servicoDesc
+    )
+    document.querySelector('#nome').value = ''
+    document.querySelector('#email').value = ''
+    document.querySelector('#fone').value = ''
+    document.querySelector('#flImage').value = ''
+    document.querySelector('#valor').value = ''
+    document.querySelector('#servicoDesc').value = ''
+  }
 })
 
 async function getServicesDb() {
@@ -78,5 +86,4 @@ async function setProviderDb(nome, email, fone, img, servico, valor, desc) {
     body: JSON.stringify(bodyJson)
   })
   const jsonData = await response.json()
-  console.log(jsonData)
 }
