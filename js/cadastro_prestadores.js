@@ -21,8 +21,37 @@ const btnSubmit = document.querySelector('#send')
 
 btnSubmit.addEventListener('click', (event) => {
   event.preventDefault()
-
-  setProviderDb()
+  const nomeInput = document.querySelector('#nome').value
+  const emailInput = document.querySelector('#email').value
+  const telefoneInput = document.querySelector('#fone').value
+  const imgInput = document.querySelector('#flImage').value
+  const selectIntput = document.querySelector('select')
+  const optionInput = selectIntput.options[selectIntput.selectedIndex].value
+  const valorInput = document.querySelector('#valor').value
+  const servicoDesc = document.querySelector('#servicoDesc').value
+  if (nomeInput == '' || emailInput == '' || nomeInput == '' || telefoneInput == '' || selectIntput == '' || optionInput == '' || valorInput == '' || servicoDesc == '') {
+    const erroMsg = document.querySelector('#erroMsg')
+    erroMsg.innerText = 'Preencha todos os campos necessários!'
+    erroMsg.classList = 'error'
+  } else {
+    erroMsg.innerText = ''
+    erroMsg.classList.remove('error')
+    setProviderDb(
+      nomeInput,
+      emailInput,
+      telefoneInput,
+      imgInput,
+      optionInput,
+      valorInput,
+      servicoDesc
+    )
+    document.querySelector('#nome').value = ''
+    document.querySelector('#email').value = ''
+    document.querySelector('#fone').value = ''
+    document.querySelector('#flImage').value = ''
+    document.querySelector('#valor').value = ''
+    document.querySelector('#servicoDesc').value = ''
+  }
 })
 
 async function getServicesDb() {
@@ -36,20 +65,20 @@ async function getServicesDb() {
     let option = document.createElement('option')
     option.innerText = servico.Service.nome
     option.setAttribute('value', servico.Service.nome)
+    option.setAttribute('value', servico.Service.id)
     selectHtml.appendChild(option)
   })
 }
-async function setProviderDb() {
+async function setProviderDb(nome, email, fone, img, servico, valor, desc) {
   const bodyJson = {
     "Provider": {
-      "nome": "Testando nome 01",
-      "email": "Testando email 01",
-      "telefone": "Testando fone 01",
-      "service_value": "Testando valor do servico 90.50",
-      "service_desc": "Testando descricao 01"
-    },
-    "Service": {
-      "nome": "Desenvolvedor web"
+      "nome": nome,
+      "email": email,
+      "telefone": fone,
+      "foto": img,
+      "service_id": servico,
+      "service_value": valor,
+      "service_desc": desc
     }
   }
   const response = await fetch('http://localhost/seuJoaoApi/providers/add/', {
@@ -57,6 +86,19 @@ async function setProviderDb() {
     body: JSON.stringify(bodyJson)
   })
   const jsonData = await response.json()
-  console.log(jsonData)
-
+  if (jsonData == 201) {
+    Swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: 'Prestador cadastrado com sucesso!',
+      showConfirmButton: false,
+      timer: 2000
+    })
+  } else {
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'Não foi possível realizar o cadastro!'
+    })
+  }
 }

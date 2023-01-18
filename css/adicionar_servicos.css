@@ -1,0 +1,76 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+body{
+  font-family: Arial, Helvetica, sans-serif;
+}
+nav{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 60px;
+  margin: 0 0 40px 0;
+  font-size: 24px;
+  background-color: rgb(50, 50, 75);
+  color: #fff;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+nav i{
+padding: 0 7px;
+}
+#cadastro-servico{
+  margin: 35px auto;
+  width: 35%;
+  text-align: center;
+  border: 2px solid  rgb(191, 191, 240);
+  border-radius: 10px;
+}
+#cadastro-servico h1{
+  background-color: rgb(191, 191, 240);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5;
+  padding:  7px 0;
+}
+#cadastro-servico form{
+  margin: 20px 0;
+}
+.envio-dados{
+  display: flex;
+  flex-direction: row;
+}
+.inputs-basico{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  padding-bottom: 20px;
+}
+.inputs-basico label, .inputs-basico input{
+  display: flex;
+  align-items: center;
+  text-align: left;
+  padding: 2px;
+  height: 25px;
+  width: 80%;
+}
+.inputs-basico label{
+  margin: 10px 0;
+  font-size: 18px;
+}
+form button{
+  width: 20%;
+  min-width: 90px;
+  padding: 10px 5px;
+  font-size: 20px;
+  background-color:  rgb(191, 191, 240);
+  border: transparent;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+form button:hover{
+  background-color:  rgb(50, 50, 75);
+  color: #fff;
+}
