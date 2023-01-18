@@ -25,8 +25,11 @@ async function setServicoDb(nomeServico) {
       icon: 'success',
       title: 'Serviço cadastrado com sucesso!',
       showConfirmButton: false,
-      timer: 2000
+      timer: 1500
     })
+    setTimeout(() => {
+      window.location.href = 'cadastro_prestadores.html'
+    }, 2000)
   } else {
     Swal.fire({
       icon: 'error',
